@@ -23,7 +23,24 @@
     }
 }
 
+/*
+  --- Media Query for iPad Pro ---
+*/
+@media (min-width: 601px) and (max-width: 1100px) {
+    main {
+        padding: 15px 30px;
+    }
 
+    /* El header queda vertical pero se ajustan gaps */
+    header {
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+    }
+
+    .skills-container .skill-list {
+        flex-basis: calc(33.33% - 15px); 
+    }
+}
 
 
 body {
