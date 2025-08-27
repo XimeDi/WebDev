@@ -4,14 +4,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* otros fonts Book Antiqua, Garamond, Calibri, Helvetica, Cambria, Trebuchet MS */
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+
     background-color: #f4f4f4;
     color: #333;
 }
 
 
 main {
-
     display: grid;
     /* definir una columna para el layout, responsive padding. */
     grid-template-columns: 1fr; 
@@ -25,6 +24,33 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Flexbox */
+/* arrange the three skill lists in a single row */
+.skills-container {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.skills-container .skill-list {
+    flex-basis: calc(33.33% - 20px); 
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+
+/* ---- Responsive and General Styling ---- */
+
+.skill-list li {
+    background: #eef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+}
+
 /* Headers */
 header {
     text-align: center;
@@ -35,7 +61,6 @@ header {
 
 header h1 {
     color: #004466; 
-    margin-bottom: 5px;
 }
 
 header p {
@@ -54,7 +79,6 @@ h2 {
     color: #0077B6;
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
-    margin-top: 30px;
 }
 
 h3 {
