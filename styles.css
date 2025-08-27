@@ -17,3 +17,40 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Headers */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0077B6; 
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #004466; 
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    color: #666;
+}
+
+header img {
+    border-radius: 50%;
+    border: 3px solid #0077B6;
+    margin-top: 10px;
+}
+
+/* Headers para secciones */
+h2 {
+    color: #0077B6;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #005580;
+    margin-top: 20px;
+}
