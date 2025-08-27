@@ -88,3 +88,43 @@ table thead tr {
     background-color: #0077B6;
     color: white;
 }
+
+
+/* Footer y contactos */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    border: none;
+    margin-bottom: 10px;
+}
+
+footer a, footer img {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover, footer img:hover {
+    transform: translateY(-5px);
+}
+
+/* Boton de descarga */
+button {
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005580;
+}
