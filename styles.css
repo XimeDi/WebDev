@@ -9,7 +9,14 @@ body {
     color: #333;
 }
 
+
 main {
+
+    display: grid;
+    /* definir una columna para el layout, responsive padding. */
+    grid-template-columns: 1fr; 
+    gap: 30px; /* espacio entre secciones */
+
     max-width: 900px;
     margin: auto;
     background-color: #fff;
