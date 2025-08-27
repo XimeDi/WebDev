@@ -1,3 +1,29 @@
+/*
+  --- Media Query for iPhone 14 Pro Max ---
+*/
+@media (max-width: 600px) {
+    /* Ajustar padding */
+    main {
+        padding: 10px 20px;
+    }
+
+    /* Stack de elemnetos del header */
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Stack de las skills lists vertical */
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skills-container .skill-list {
+        flex-basis: 100%;
+    }
+}
+
+
 
 
 body {
