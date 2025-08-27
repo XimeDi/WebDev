@@ -54,3 +54,37 @@ h3 {
     color: #005580;
     margin-top: 20px;
 }
+
+
+/* Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #eef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+}
+
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table thead tr {
+    background-color: #0077B6;
+    color: white;
+}
