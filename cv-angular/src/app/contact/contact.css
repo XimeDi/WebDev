@@ -1,0 +1,33 @@
+/* Headers para secciones */
+h2 {
+    color: #0077B6;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Footer y contactos */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    border: none;
+    margin-bottom: 10px;
+}
+
+footer a, footer img {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover, footer img:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos para el modo oscuro */
+:host-context(.dark-mode) h2 {
+    color: #4CAF50;
+}
