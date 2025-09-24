@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class Header {
+export class HeaderComponent implements OnInit {
+  greeting: string = '';
 
+  ngOnInit(): void {
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 12) {
+      this.greeting = '¡Buenos días!';
+    } else if (hour >= 12 && hour < 19) {
+      this.greeting = '¡Buenas tardes!';
+    } else {
+      this.greeting = '¡Buenas noches!';
+    }
+  }
 }
