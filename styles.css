@@ -78,22 +78,6 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Flexbox */
-/* arrange the three skill lists in a single row */
-.skills-container {
-    display: flex;
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    gap: 20px;
-}
-
-.skills-container .skill-list {
-    flex-basis: calc(33.33% - 20px); 
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
 
 /* ---- Responsive and General Styling ---- */
 
@@ -122,12 +106,6 @@ header p {
     color: #666;
 }
 
-header img {
-    border-radius: 50%;
-    border: 3px solid #0077B6;
-    margin-top: 10px;
-}
-
 /* Headers para secciones */
 h2 {
     color: #0077B6;
@@ -145,14 +123,6 @@ h3 {
 ul {
     list-style-type: none;
     padding: 0;
-}
-
-ul li {
-    background: #eef;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-left: 4px solid #0077B6;
-    border-radius: 4px;
 }
 
 
