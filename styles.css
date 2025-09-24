@@ -1,0 +1,185 @@
+/*
+  --- Media Query for iPhone 14 Pro Max ---
+*/
+@media (max-width: 600px) {
+    /* Ajustar padding */
+    main {
+        padding: 10px 20px;
+    }
+
+    /* Stack de elemnetos del header */
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Stack de las skills lists vertical */
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skills-container .skill-list {
+        flex-basis: 100%;
+    }
+}
+
+/*
+  --- Media Query for iPad Pro ---
+*/
+@media (min-width: 601px) and (max-width: 1100px) {
+    main {
+        padding: 15px 30px;
+    }
+
+    /* El header queda vertical pero se ajustan gaps */
+    header {
+        grid-template-columns: 1fr auto;
+        gap: 15px;
+    }
+
+    .skills-container .skill-list {
+        flex-basis: calc(33.33% - 15px); 
+    }
+}
+
+/*
+  --- Media Query for Omen 17 ---
+*/
+@media (min-width: 1101px) {
+
+    main {
+        max-width: 1100px;
+        padding: 25px 50px;
+    }
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* otros fonts Book Antiqua, Garamond, Calibri, Helvetica, Cambria, Trebuchet MS */
+    line-height: 1.6;
+    margin: 0;
+
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+main {
+    display: grid;
+    /* definir una columna para el layout, responsive padding. */
+    grid-template-columns: 1fr; 
+    gap: 30px; /* espacio entre secciones */
+
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ---- Responsive and General Styling ---- */
+
+.skill-list li {
+    background: #eef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+}
+
+/* Headers */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0077B6; 
+    padding-bottom: 20px;
+}
+
+header h1 {
+    color: #004466; 
+}
+
+header p {
+    font-style: italic;
+    color: #666;
+}
+
+/* Headers para secciones */
+h2 {
+    color: #0077B6;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #005580;
+    margin-top: 20px;
+}
+
+
+/* Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table thead tr {
+    background-color: #0077B6;
+    color: white;
+}
+
+
+/* Footer y contactos */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+footer h2 {
+    border: none;
+    margin-bottom: 10px;
+}
+
+footer a, footer img {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover, footer img:hover {
+    transform: translateY(-5px);
+}
+
+/* Boton de descarga */
+button {
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005580;
+}
