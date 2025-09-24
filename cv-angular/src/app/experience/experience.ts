@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-experience',
-  templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.css']
+  templateUrl: './experience.html',
+  styleUrls: ['./experience.css']
 })
 export class ExperienceComponent {
   showExperience: boolean = true;
@@ -13,7 +13,7 @@ export class ExperienceComponent {
     { period: 'Mar 2024 - Jun 2024', company: 'Tech Solutions Inc.', position: 'Asistente de Desarrollo' }
   ];
 
-  toggleExperience() {
+  /*toggleExperience() {
     this.showExperience = !this.showExperience;
-  }
+  }*/
 }

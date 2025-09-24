@@ -1,39 +1,55 @@
 <section>
-<h2 class="text-primary mt-4 mb-3">Habilidades Técnicas y Tecnologías</h2>
+  <h2 class="text-primary mt-4 mb-3">Habilidades Técnicas y Tecnologías</h2>
 
-<input type="text" id="skills-search" placeholder="Buscar habilidades..." style="width: 100%; padding: 8px; margin-bottom: 10px;" [(ngModel)]="searchTerm">
-<div class="card p-3">
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-    <div class="card h-100 shadow-sm">
-        <div class="card-body">
-        <h3 class="card-title text-secondary">Tecnologías y Herramientas</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let skill of technologies | filterSkills: searchTerm">{{ skill }}</li>
-        </ul>
+  <input type="text" id="skills-search" placeholder="Buscar habilidades..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  
+  <div class="card p-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      
+      <div class="col"> 
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-secondary">Tecnologías y Herramientas</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Github</li>
+              <li class="list-group-item">Docker</li>
+              <li class="list-group-item">Postman</li>
+              <li class="list-group-item">AWS EC2</li>
+              <li class="list-group-item">Matplotlib</li>
+            </ul>
+          </div>
         </div>
-    </div>
-    </div>
-    <div class="col">
-    <div class="card h-100 shadow-sm">
-        <div class="card-body">
-        <h3 class="card-title text-secondary">Lenguajes de Programación</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let skill of languages | filterSkills: searchTerm">{{ skill }}</li>
-        </ul>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-secondary">Lenguajes de Programación</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Python</li>
+              <li class="list-group-item">Java</li>
+              <li class="list-group-item">C</li>
+              <li class="list-group-item">SQL</li>
+            </ul>
+          </div>
         </div>
-    </div>
-    </div>
-    <div class="col">
-    <div class="card h-100 shadow-sm">
-        <div class="card-body">
-        <h3 class="card-title text-secondary">Soft Skills</h3>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let skill of softSkills | filterSkills: searchTerm">{{ skill }}</li>
-        </ul>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-secondary">Soft Skills</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Solución de problemas</li>
+              <li class="list-group-item">Pensamiento crítico</li>
+              <li class="list-group-item">Adaptabilidad y aprendizaje continuo</li>
+              <li class="list-group-item">Comunicación efectiva</li>
+              <li class="list-group-item">Trabajo en equipo y colaboración</li>
+            </ul>
+          </div>
         </div>
+      </div>
+      
     </div>
-    </div>
-</div>
-</div>
+  </div>
 </section>

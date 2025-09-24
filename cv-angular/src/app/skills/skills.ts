@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  templateUrl: './skills.html',
+  styleUrls: ['./skills.css']
 })
 export class SkillsComponent {
   searchTerm: string = '';
@@ -30,6 +30,6 @@ export class SkillsComponent {
     'Comunicación efectiva',
     'Trabajo en equipo y colaboración'
   ];
-
-  // La lógica de filtrado se maneja con una pipe
 }
+
+

@@ -23,6 +23,10 @@ ul {
     padding: 0;
 }
 
+
+
+
+
 /* Estilos para el modo oscuro */
 :host-context(.dark-mode) .card {
     background-color: #1e1e1e;
@@ -62,4 +66,29 @@ ul {
     background: #333;
     border-left: 4px solid #4CAF50;
     color: #f4f4f4;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+}
+
+.col {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    
+    flex: 0 0 33.333333%; 
+    max-width: 0 0 33.333333%;
+}
+
+
+.list-group-item {
+    background: #eef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
 }

@@ -1,5 +1,5 @@
-<button id="toggle-contact-btn" (click)="toggleContact()">{{ showContact ? 'Ocultar Información de Contacto' : 'Mostrar Información de Contacto' }}</button>
-<footer id="contact" class="text-center mt-5 py-4 border-top" *ngIf="showContact">
+<button id="toggle-contact-btn" >{{ showContact ? 'Ocultar Información de Contacto' : 'Mostrar Información de Contacto' }}</button> <!--(click)="toggleContact()"-->
+<footer id="contact" class="text-center mt-5 py-4 border-top"> <!--*ngIf="showContact"-->
     <button (click)="downloadPdf()" class="btn btn-primary btn-lg shadow">Download PDF</button>
 
     <h2 class="mt-4 text-secondary">Contacto</h2>
