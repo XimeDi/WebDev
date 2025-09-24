@@ -1,0 +1,13 @@
+  <div class="global-buttons" [ngClass]="{'dark-mode': isDarkMode}">
+    <button (click)="toggleTheme()">
+      {{ isDarkMode ? 'Modo Claro' : 'Modo Oscuro' }}
+    </button>
+  </div>
+
+<main class ="container">
+  <app-header></app-header>
+  <app-skills></app-skills>
+  <app-education></app-education>
+  <app-experience></app-experience>
+  <app-contact></app-contact> 
+</main>

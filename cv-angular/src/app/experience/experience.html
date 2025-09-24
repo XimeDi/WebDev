@@ -1,0 +1,29 @@
+<button class="btn btn-primary mb-3">
+  {{ showExperience ? 'Ocultar Experiencia Laboral' : 'Mostrar Experiencia Laboral' }}
+</button> <!--(click)="toggleExperience()"--> 
+
+<section id="experience"> <!--*ngIf="showExperience"--> 
+  <h2 class="text-primary mt-4 mb-3">Experiencia Laboral</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Período</th>
+        <th scope="col">Empresa</th>
+        <th scope="col">Puesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Agosto 2025 - Noviembre 2025</td>
+        <td>ES Consulting</td>
+        <td>Practicante</td>
+      </tr>
+      <tr>
+        <td>Mar 2024 - Jun 2024</td>
+        <td>Tech Solutions Inc.</td>
+        <td>Asistente de Desarrollo</td>
+      </tr>
+    </tbody>
+    <caption>Experiencia profesional de Ximena Díaz</caption>
+  </table>
+</section>
