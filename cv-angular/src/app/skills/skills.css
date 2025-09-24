@@ -1,0 +1,65 @@
+/* Headers para secciones */
+h2 {
+    color: #0077B6;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #005580;
+    margin-top: 20px;
+}
+
+.skill-list li {
+    background: #eef;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilos para el modo oscuro */
+:host-context(.dark-mode) .card {
+    background-color: #1e1e1e;
+    border-color: #444;
+}
+
+:host-context(.dark-mode) .card-body {
+    background-color: #1e1e1e;
+}
+
+:host-context(.dark-mode) .card-title {
+    color: #4CAF50 !important;
+}
+
+:host-context(.dark-mode) .list-group-item {
+    background-color: #2a2a2a;
+    color: #f4f4f4;
+    border-color: #444;
+}
+
+:host-context(.dark-mode) #skills-search {
+    background-color: #2a2a2a;
+    color: #f4f4f4;
+    border: 1px solid #4CAF50;
+}
+
+:host-context(.dark-mode) #skills-search::placeholder {
+    color: #aaa;
+}
+
+:host-context(.dark-mode) h2,
+:host-context(.dark-mode) h3 {
+    color: #4CAF50;
+}
+
+:host-context(.dark-mode) ul li {
+    background: #333;
+    border-left: 4px solid #4CAF50;
+    color: #f4f4f4;
+}
