@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // New: Import FormsModule here
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-// New: Import all the components you created
+// Import all the components created
 import { HeaderComponent } from './header/header';
 import { SkillsComponent } from './skills/skills';
 import { EducationComponent } from './education/education';
 import { ExperienceComponent } from './experience/experience';
 import { ContactComponent } from './contact/contact';
+
+
+import { FilterSkillsPipe } from './skills/filter-skills-pipe';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +21,18 @@ import { ContactComponent } from './contact/contact';
     CommonModule,
     RouterOutlet,
     FormsModule, 
+    HttpClientModule, 
     HeaderComponent, 
     SkillsComponent,
     EducationComponent,
     ExperienceComponent,
-    ContactComponent
+    ContactComponent,
+    FilterSkillsPipe
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
+
 export class AppComponent {
   title = 'my-angular-cv';
   isDarkMode: boolean = false;
