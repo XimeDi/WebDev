@@ -33,7 +33,6 @@
         padding: 15px 30px;
     }
 
-    /* El header queda vertical pero se ajustan gaps */
     header {
         grid-template-columns: 1fr auto;
         gap: 15px;
@@ -88,34 +87,107 @@ button:hover {
     background-color: #005580;
 }
 
-/* Estilos para el modo oscuro */
+
+/* ---------------------------------------------------------------- */
+/* ANIMACIONES KEYFRAMES (Efectos Neón) */
+/* ---------------------------------------------------------------- */
+
+/* Brillo constante para títulos y cajas */
+@keyframes neon-glow {
+    0%, 100% { 
+        text-shadow: 0 0 4px rgba(232, 62, 140, 0.5), 0 0 8px rgba(232, 62, 140, 0.4); 
+        box-shadow: 0 0 8px rgba(232, 62, 140, 0.4); 
+    }
+    50% { 
+        text-shadow: 0 0 8px rgba(232, 62, 140, 0.8), 0 0 12px rgba(232, 62, 140, 0.6); 
+        box-shadow: 0 0 12px rgba(232, 62, 140, 0.6); 
+    }
+}
+
+
+
+@keyframes pulse {
+    0%, 100% { background-color: #0A021F; }
+    50% { background-color: #0F032A; } /* Tono ligeramente más claro */
+}
+
+/* Parpadeo al hacer hover (para botones) */
+@keyframes hover-flicker {
+    0%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.9; }
+    50% { opacity: 1.1; }
+}
+
+
+
+:root {
+  --cyber-dark: #0A021F;      /* Fondo Principal: Azul muy oscuro/negro morado */
+  --cyber-bg-card: #140536;   /* Fondo de Tarjetas/Main: Morado oscuro */
+  --cyber-text: #E5DFFF;      /* Texto principal: Blanco ligeramente morado */
+  --cyber-neon: #E83E8C;      /* Color Neón (Acento/Primario): Magenta brillante */
+  --cyber-neon-hover: #C5306B; /* Color Neón al pasar el mouse */
+  --cyber-striping: #1D0A4F;  /* Rayas de tabla: Morado intermedio */
+}
+
+/* Base del Documento */
 body.dark-mode {
-    background-color: #121212;
-    color: #f4f4f4;
+    background-color: var(--cyber-dark); /* Fondo muy oscuro */
+    color: var(--cyber-text);            /* Texto claro con tinte morado */
+    transition: background-color 0.3s, color 0.3s;
+    animation: pulse 60s infinite alternate;
 }
 
+/* Contenedor Principal  */
 body.dark-mode main {
-    background-color: #1e1e1e;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    background-color: var(--cyber-bg-card); /* Morado oscuro para la superficie */
+    /* Sombra con el color neón */
+    box-shadow: 0 4px 15px rgba(232, 62, 140, 0.4); 
+    border: 1px solid rgba(232, 62, 140, 0.5); /* Borde sutil neón */
+    animation: neon-glow 3s infinite alternate;
 }
 
+/* Títulos y Acentos (h2.text-primary) */
+body.dark-mode .text-primary, 
+body.dark-mode h2, 
+body.dark-mode caption {
+    color: var(--cyber-neon) !important; /* Usar el color neón */
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+/* Tablas: Filas Impares (Alternado de color) */
 body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
-    background-color: #2a2a2a;
+    background-color: var(--cyber-striping); /* Morado intermedio */
 }
 
+/* Tablas: Hover (Resaltado) */
 body.dark-mode .table-hover > tbody > tr:hover > * {
-    background-color: #388E3C;
+    background-color: var(--cyber-neon); /* Fondo se vuelve neón */
+    color: var(--cyber-dark); /* Texto oscuro para contraste */
 }
 
-body.dark-mode button {
-    background-color: #4CAF50;
+/* Botones */
+body.dark-mode button,
+body.dark-mode .btn-primary {
+    background-color: var(--cyber-neon); /* Color Neón */
+    border: 2px solid var(--cyber-neon);
+    color: var(--cyber-dark); /* Texto muy oscuro para que resalte */
+    box-shadow: 0 0 10px rgba(232, 62, 140, 0.6); /* Brillo neón */
+    font-weight: bold;
+    transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-body.dark-mode button:hover {
-    background-color: #388E3C;
+/* Botones: Hover */
+body.dark-mode button:hover,
+body.dark-mode .btn-primary:hover {
+    background-color: var(--cyber-neon-hover); /* Tono un poco más oscuro */
+    border-color: var(--cyber-neon-hover);
+    box-shadow: 0 0 15px rgba(232, 62, 140, 0.9); /* Brillo más intenso */
+    animation: hover-flicker 0.1s steps(2, jump) infinite;
 }
 
+/* Footer (Invertir colores para iconos) */
 body.dark-mode footer a,
 body.dark-mode footer img {
-    filter: invert(1);
+    filter: invert(0.8) sepia(1) hue-rotate(-50deg) saturate(3);
 }
+

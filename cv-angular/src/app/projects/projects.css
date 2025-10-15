@@ -1,0 +1,189 @@
+/*
+  =====================================
+  Ajuste de altura uniforme para las tarjetas
+  =====================================
+*/
+
+.row-cols-1 {
+  /* Aumenta el espacio vertical entre filas de tarjetas. */
+  --bs-gutter-y: 2rem; 
+  
+  /* Asegura que el espacio horizontal también se mantenga o aumente */
+  --bs-gutter-x: 2rem; 
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; 
+}
+
+.card {
+  min-height: 250px; 
+  height: 100%;     
+  
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; 
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  
+}
+
+
+.card-title .star-count {
+  font-size: 0.9rem; 
+  font-weight: 400; 
+  color: #666;
+  margin-left: 10px;
+  white-space: nowrap; 
+}
+
+
+/* Estilo del enlace del repositorio */
+.card-title a {
+  color: var(--secondary-color, #6c757d); 
+  text-decoration: none;
+  transition: color 0.3s ease;
+  /* Asegurar que el link no ocupe todo el espacio de la línea */
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* Descripción del proyecto (el flex-grow mantiene la altura uniforme) */
+.card-text {
+    flex-grow: 1; 
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; 
+    padding: 20px;
+    height: 100%;
+}
+
+
+
+/*
+  =====================================
+  Resto de los estilos...
+  =====================================
+*/
+
+#projects {
+  padding: 20px 0;
+}
+
+#projects h2 {
+  border-bottom: 2px solid var(--primary-color, #007bff); 
+  padding-bottom: 10px;
+  margin-bottom: 25px !important;
+  font-weight: 600;
+}
+
+/* Efecto Hover para destacar la tarjeta al pasar el ratón */
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important; 
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-title a {
+  color: var(--secondary-color, #6c757d); 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+  color: var(--primary-color, #0056b3); 
+  text-decoration: underline;
+}
+
+
+
+/*
+  =====================================
+  ESTILO CYBERPUNK (DARK MODE)
+  =====================================
+*/
+
+/* Estilos de la Tarjeta en Dark Mode */
+body.dark-mode .card {
+    background-color: var(--cyber-bg-card, rgba(255, 255, 255, 0.4)); /* Fondo de tarjeta morado oscuro */
+    border: 1px solid rgba(232, 62, 140, 0.5); /* Borde sutil neón */
+    color: var(--cyber-text, #E5DFFF);
+    box-shadow: 0 0 5px rgba(232, 62, 140, 0.3); /* Sombra sutil para simular apagado */
+}
+
+/* Efecto Hover (Neón Intenso) */
+body.dark-mode .card:hover {
+    transform: translateY(-5px); 
+    /* Box-shadow con más brillo magenta */
+    box-shadow: 0 0 15px var(--cyber-neon, #E83E8C), 0 0 20px rgba(232, 62, 140, 0.7) !important; 
+    border-color: var(--cyber-neon, #E83E8C);
+}
+
+/* Título del Repositorio (Neón) */
+body.dark-mode .card-title a {
+    color: var(--cyber-neon,  #E5DFFF); /* Color del link en neón */
+    font-weight: 700;
+    /* Aplicar un brillo sutil al texto */
+    text-shadow: 0 0 3px rgba(232, 62, 140, 0.6); 
+}
+
+/* Estrellas (Metadata) */
+body.dark-mode .card-title .star-count {
+    color: var(--cyber-text, #E5DFFF); /* Texto más claro */
+    font-weight: 500;
+    /* Ajuste de brillo para que se vea como si estuviera encendido */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Descripción del Proyecto */
+body.dark-mode .card-text {
+    color: var(--cyber-text, #E5DFFF);
+}
+
+/*
+  =====================================
+  ESTILOS PARA MÚLTIPLES COLUMNAS
+  =====================================
+*/
+/* Muestra 2 proyectos por fila */
+@media (min-width: 768px) {
+  .row-cols-1 {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 2rem;
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+  }
+  .row-cols-1 .col {
+    flex: 0 0 auto;
+    width: 50%; 
+  }
+}
+
+/* Muestra 3 proyectos por fila */
+@media (min-width: 1200px) {
+  .row-cols-1 .col {
+    width: 33.3333%; 
+  }
+}

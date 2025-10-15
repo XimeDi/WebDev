@@ -10,85 +10,125 @@ h3 {
     margin-top: 20px;
 }
 
-.skill-list li {
-    background: #eef;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-left: 4px solid #0077B6;
-    border-radius: 4px;
-}
-
+/* El contenedor <ul> ahora usa Grid para las 3 columnas */
 ul {
     list-style-type: none;
     padding: 0;
+    display: grid; /* Usar Grid para la distribución en columnas */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    gap: 2rem; /* Espacio entre los ítems  */
+}
+
+/* Los ítems <li> solo definen su estilo visual */
+.skill-list li {
+    background: #eef;
+    padding: 10px;
+    border-left: 4px solid #0077B6;
+    border-radius: 4px;
+    height: auto; /* Ajuste automático de altura */
+    width: 100%; /* Asegura que ocupe todo el ancho de la columna Grid */
 }
 
 
 
 
 
-/* Estilos para el modo oscuro */
+/* ---------------------------------------------------------------- */
+/* ANIMACIONES KEYFRAMES*/
+/* ---------------------------------------------------------------- */
+
+/* VARIABLES DE COLOR CYBERPUNK*/
+:root {
+  --cyber-dark: #0A021F;      /* Fondo Principal: Azul muy oscuro/negro morado */
+  --cyber-bg-card: #140536;   /* Fondo de Tarjetas/Main: Morado oscuro */
+  --cyber-text: #E5DFFF;      /* Texto principal: Blanco ligeramente morado */
+  --cyber-neon: #E83E8C;      /* Color Neón (Acento/Primario): Magenta brillante */
+  --cyber-neon-hover: #C5306B; /* Color Neón al pasar el mouse */
+  --cyber-striping: #1D0A4F;  /* Rayas de tabla: Morado intermedio */
+}
+
+/* Brillo constante para títulos y cajas */
+@keyframes neon-glow {
+    0%, 100% { 
+        text-shadow: 0 0 4px rgba(232, 62, 140, 0.5), 0 0 8px rgba(232, 62, 140, 0.4); 
+        box-shadow: 0 0 8px rgba(232, 62, 140, 0.4); 
+    }
+    50% { 
+        text-shadow: 0 0 8px rgba(232, 62, 140, 0.8), 0 0 12px rgba(232, 62, 140, 0.6); 
+        box-shadow: 0 0 12px rgba(232, 62, 140, 0.6); 
+    }
+}
+
+/* Modo oscuro */
+
+/* Contenedores de Tarjeta (Skills, Educación, etc.) */
 :host-context(.dark-mode) .card {
-    background-color: #1e1e1e;
-    border-color: #444;
+    background-color: var(--cyber-bg-card);
+    /* Borde con brillo neón */
+    border-color: rgba(232, 62, 140, 0.5); 
+    box-shadow: 0 0 10px rgba(232, 62, 140, 0.3);
 }
 
 :host-context(.dark-mode) .card-body {
-    background-color: #1e1e1e;
+    background-color: var(--cyber-bg-card);
 }
 
+/* Títulos dentro de las Tarjetas (Acento Neón) */
 :host-context(.dark-mode) .card-title {
-    color: #4CAF50 !important;
+    color: var(--cyber-neon) !important;
+    animation: neon-glow 1.5s infinite alternate; /* Efecto de brillo en títulos */
 }
 
+/* Ítems de la Lista de Habilidades/Lista de Grupo */
 :host-context(.dark-mode) .list-group-item {
-    background-color: #2a2a2a;
-    color: #f4f4f4;
-    border-color: #444;
+    background-color: var(--cyber-striping); /* Morado intermedio */
+    color: var(--cyber-text);
+    border-color: rgba(232, 62, 140, 0.3); /* Borde sutil */
+    border-left: 4px solid var(--cyber-neon); /* Línea de acento neón */
+    transition: background-color 0.3s;
 }
 
+/* Efecto Hover en las Habilidades */
+:host-context(.dark-mode) .list-group-item:hover {
+    background-color: rgba(232, 62, 140, 0.1); /* Fondo claro con neón */
+    box-shadow: 0 0 10px rgba(232, 62, 140, 0.6);
+}
+
+
+/* Campo de Búsqueda de Habilidades */
 :host-context(.dark-mode) #skills-search {
-    background-color: #2a2a2a;
-    color: #f4f4f4;
-    border: 1px solid #4CAF50;
+    background-color: var(--cyber-striping);
+    color: var(--cyber-text);
+    /* Borde y color del neón */
+    border: 1px solid var(--cyber-neon); 
+    box-shadow: 0 0 8px rgba(232, 62, 140, 0.5); /* Sombra de brillo */
+    transition: box-shadow 0.3s;
 }
 
+/* Placeholder del campo de búsqueda */
 :host-context(.dark-mode) #skills-search::placeholder {
-    color: #aaa;
+    color: rgba(229, 223, 255, 0.6);
 }
 
+/* Focus en el campo de búsqueda (más brillo) */
+:host-context(.dark-mode) #skills-search:focus {
+    border-color: var(--cyber-neon);
+    box-shadow: 0 0 15px var(--cyber-neon); 
+    outline: none;
+}
+
+/* Títulos Secundarios dentro de Componentes */
 :host-context(.dark-mode) h2,
 :host-context(.dark-mode) h3 {
-    color: #4CAF50;
+    color: var(--cyber-neon);
+    animation: neon-glow 1.5s infinite alternate; /* Brillo animado */
 }
 
+/* Elementos de Lista */
 :host-context(.dark-mode) ul li {
-    background: #333;
-    border-left: 4px solid #4CAF50;
-    color: #f4f4f4;
-}
-
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
-}
-
-.col {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    
-    flex: 0 0 33.333333%; 
-    max-width: 0 0 33.333333%;
-}
-
-
-.list-group-item {
-    background: #eef;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-left: 4px solid #0077B6;
+    background: var(--cyber-striping); 
+    border-left: 4px solid var(--cyber-neon);
+    color: var(--cyber-text);
+    margin-bottom: 8px; 
     border-radius: 4px;
 }
