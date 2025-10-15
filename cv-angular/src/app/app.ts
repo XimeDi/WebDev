@@ -10,6 +10,8 @@ import { SkillsComponent } from './skills/skills';
 import { EducationComponent } from './education/education';
 import { ExperienceComponent } from './experience/experience';
 import { ContactComponent } from './contact/contact';
+import { ProjectsComponent } from './projects/projects';
+import { AdviceComponent } from './advice/advice';
 
 
 import { FilterSkillsPipe } from './skills/filter-skills-pipe';
@@ -27,7 +29,9 @@ import { FilterSkillsPipe } from './skills/filter-skills-pipe';
     EducationComponent,
     ExperienceComponent,
     ContactComponent,
-    FilterSkillsPipe
+    FilterSkillsPipe,
+    ProjectsComponent,
+    AdviceComponent
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']

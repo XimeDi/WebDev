@@ -1,0 +1,53 @@
+/* src/app/advice/advice.css */
+
+.advice-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: auto; /* Centrar la tarjeta */
+}
+
+/* Base (Modo Claro) */
+.advice-card {
+    border: 1px solid #ddd;
+}
+.advice-card .card-title {
+    font-weight: 600;
+    color: #007bff;
+}
+.advice-card .card-text {
+    font-style: italic;
+    color: #333;
+}
+
+
+/* =====================================
+  ESTILO CYBERPUNK (DARK MODE)
+  =====================================
+*/
+body.dark-mode .advice-card {
+    background-color: var(--cyber-bg-card, #140536);
+    border: 1px solid rgba(232, 62, 140, 0.5); 
+    box-shadow: 0 0 5px rgba(232, 62, 140, 0.3);
+}
+
+body.dark-mode .advice-card:hover {
+    transform: scale(1.01); 
+    box-shadow: 0 0 15px var(--cyber-neon, #E83E8C), 0 0 20px rgba(232, 62, 140, 0.7) !important; 
+    border-color: var(--cyber-neon, #E83E8C);
+}
+
+body.dark-mode .advice-card .card-title {
+    color: var(--cyber-neon, #E83E8C) !important;
+    text-shadow: 0 0 5px rgba(232, 62, 140, 0.8);
+    animation: neon-glow 1.5s infinite alternate;
+}
+
+body.dark-mode .advice-card .card-text {
+    color: var(--cyber-text,  #E5DFFF);
+    font-weight: 300;
+}
+
+body.dark-mode .spinner-border {
+    color: var(--cyber-neon, #E83E8C) !important;
+}

@@ -1,11 +1,11 @@
 <button class="btn btn-primary mb-3" (click)="toggleExperience()">
   {{ showExperience ? 'Ocultar Experiencia Laboral' : 'Mostrar Experiencia Laboral' }}
-</button> <!--(click)="toggleExperience()"--> 
+</button> 
 
-<section id="experience"> <!--*ngIf="showExperience"--> 
+<section id="experience" *ngIf="showExperience"> 
   <h2 class="text-primary mt-4 mb-3">Experiencia Laboral</h2>
 
-  <!-- Muestra un mensaje si el array está vacío (ideal para un estado de carga) -->
+  <!-- Muestra un mensaje si el array está vacío -->
   <div *ngIf="experience.length === 0" class="alert alert-info">
     Cargando experiencias...
   </div>
@@ -19,7 +19,6 @@
       </tr>
     </thead>
     <tbody>
-      <!-- REQUERIDO: Iterar sobre el array 'experience' que se carga desde la API -->
       <tr *ngFor="let job of experience">
         <td>{{job.period}}</td>
         <td>{{job.company}}</td>
